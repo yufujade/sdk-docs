@@ -169,16 +169,14 @@
 <hr class="docutils" />
 <div class="section" id="sdk">
 <h2>使用SDK之前<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h2>
-<ul>
-<li><p class="first">作为身份提供者（IDP），可以使用玉符SDK为用户生成并签署JWT令牌，并送到玉符服务器上认证并登录到第三方服务提供商。</p>
-<blockquote>
-<div><p>需从玉符注册并获取相应的身份提供者ID，并生成pem格式的公私钥文件。</p>
-</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>作为身份提供者（IDP），可以使用玉符SDK为用户生成并签署JWT令牌，并送到玉符服务器上认证并登录到第三方服务提供商。</dt>
+<dd>需从玉符注册并获取相应的身份提供者ID，并生成pem格式的公私钥文件。</dd>
+</dl>
 </li>
-<li><p class="first">作为服务提供者（SP），可以使用玉符SDK验证JWT令牌的有效性（包括有效期、签名等），成功后进行相应的建权。</p>
-</li>
-<li><p class="first">如果服务提供者（SP）还为用户/租户提供身份联合、第三方登录的功能，可以使用玉符SDK生成并签署JWT令牌，并送到玉符服务器上认证并跳转到第三方身份提供者。(需额外生成pem格式的公私钥文件)</p>
-</li>
+<li>作为服务提供者（SP），可以使用玉符SDK验证JWT令牌的有效性（包括有效期、签名等），成功后进行相应的建权。</li>
+<li>如果服务提供者（SP）还为用户/租户提供身份联合、第三方登录的功能，可以使用玉符SDK生成并签署JWT令牌，并送到玉符服务器上认证并跳转到第三方身份提供者。(需额外生成pem格式的公私钥文件)</li>
 </ul>
 </div>
 <hr class="docutils" />
@@ -187,13 +185,16 @@
 <ol class="arabic simple">
 <li>使用库方法</li>
 </ol>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li>将<code class="docutils literal"><span class="pre">yufusdk-{version}.jar</span></code>文件添加到项目的library中，确保路径配置正确。</li>
 </ul>
+</div></blockquote>
 <ol class="arabic simple">
 <li>使用Maven</li>
 </ol>
-<ul>
+<blockquote>
+<div><ul>
 <li><p class="first">将<code class="docutils literal"><span class="pre">yufusdk-{version}.jar</span></code>文件添加到项目下某一路径(例如<code class="docutils literal"><span class="pre">lib</span></code>)，添加下面的内容到项目<code class="docutils literal"><span class="pre">pom.xml</span></code>的<code class="docutils literal"><span class="pre">dependencies</span></code>里:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;dependency&gt;
   &lt;groupId&gt;com.yufu.sso&lt;/groupId&gt;
@@ -206,8 +207,8 @@
 </div>
 </li>
 </ul>
+</div></blockquote>
 </div>
-<hr class="docutils" />
 <div class="section" id="id2">
 <h2>使用SDK<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p><strong>身份提供者（IDP)</strong></p>
@@ -254,20 +255,22 @@ String tenant = claims.getClaims().get(&quot;tnt&quot;); // 租户名称``
 <li><p class="first">根据第2步获取的用户信息，您的系统可进行鉴权和赋予登录系统等相应权限，否则提示用户登录失败。推荐鉴权方案:</p>
 </li>
 </ol>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li>服务提供商(SP)允许租户管理员输入一个玉符的唯一识别码</li>
 <li>在第2步Token验证通过后，根据获取的租户名称/ID和识别码,
 查看是否匹配该租户在服务提供商(SP)所提供的唯一识别码，如匹配则表示租户为有效租户。</li>
 <li>接着查看用户是否存在于租户中，如果存在，则赋予登录系统的权限。</li>
 </ul>
+</div></blockquote>
 </div>
-<hr class="docutils" />
 <div class="section" id="id3">
 <h2>异常说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li>在调用verify()方法时可能抛出以下异常:</li>
 </ol>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li>InvalidTokenException : 无效token</li>
 <li>InvalidFormatException : token格式不正确</li>
 <li>TokenExpiredException : token过期</li>
@@ -276,14 +279,17 @@ String tenant = claims.getClaims().get(&quot;tnt&quot;); // 租户名称``
 <li>MissingKeyIdException : 缺少KeyID</li>
 <li>CannotRetrieveKeyException : key为空</li>
 </ul>
+</div></blockquote>
 <ol class="arabic simple">
 <li>创建RSATokenGenerator对象时可能抛出YufuInitException异常，存在以下几种情况：</li>
 </ol>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li>找不到private key文件路径</li>
 <li>private key文件无效</li>
 <li>无法读取private key文件</li>
 </ul>
+</div></blockquote>
 <ol class="arabic simple">
 <li>调用generate()方法时，方法体中的sign()方法可能抛出GenerateException异常。</li>
 </ol>
