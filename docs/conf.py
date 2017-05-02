@@ -45,9 +45,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'SDK Documentations'
-copyright = u'2017, vega'
-author = u'vega'
+project = u'玉符 开发者文档'
+copyright = u'2017, yufuid'
+author = u'yufuid'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

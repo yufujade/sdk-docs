@@ -1,14 +1,7 @@
-玉符 - SDK文档
+SDK
 ==============================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    java/readme.rst
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

@@ -112,8 +112,3 @@ Java
 
 FAQ
 ---
-
-联系玉符
---------
-
-contact@yufuid.com
