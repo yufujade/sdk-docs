@@ -1,0 +1,1 @@
+Search.setIndex({docnames:["index"],envversion:50,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{},titles:["Welcome to SDK Documentations&#8217;s documentation!"],titleterms:{and:0,document:0,indice:0,sdk:0,tabl:0,to:0,welcom:0}})
