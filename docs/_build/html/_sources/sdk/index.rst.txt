@@ -1,10 +1,10 @@
-玉符 - 开发者文档
+玉符 - SDK文档
 ==============================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   sdk/index.rst
+   java/readme.rst
 
 Indices and tables
 ==================
