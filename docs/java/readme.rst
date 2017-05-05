@@ -21,21 +21,21 @@ Java
 安装SDK
 -------
 
-#. 使用库方法
+1. 使用库方法:
 
-  - 将\ ``yufusdk-{version}.jar``\ 文件添加到项目的library中，确保路径配置正确。
+   - 将\ ``yufusdk-{version}.jar``\ 文件添加到项目的library中，确保路径配置正确。
 
-#. 使用Maven
+#. 使用Maven:
 
-  - 将\ ``yufusdk-{version}.jar``\ 文件添加到项目下某一路径(例如\ ``lib``)，添加下面的内容到项目\ ``pom.xml``\ 的\ ``dependencies``\ 里::
+   - 将\ ``yufusdk-{version}.jar``\ 文件添加到项目下某一路径(例如\ ``lib``)，添加下面的内容到项目\ ``pom.xml``\ 的\ ``dependencies``\ 里::
 
-        <dependency>
-          <groupId>com.yufu.sso</groupId>
-          <artifactId>yufusdk</artifactId>
-          <version>{version}</version>
-          <scope>system</scope>
-          <systemPath>${basedir}/lib/yufusdk-{version}.jar</systemPath>
-        </dependency>
+      <dependency>
+        <groupId>com.yufu.sso</groupId>
+        <artifactId>yufusdk</artifactId>
+        <version>{version}</version>
+        <scope>system</scope>
+        <systemPath>${basedir}/lib/yufusdk-{version}.jar</systemPath>
+      </dependency>
 
 使用SDK
 -------
@@ -78,29 +78,29 @@ Java
 
 #. 根据第2步获取的用户信息，您的系统可进行鉴权和赋予登录系统等相应权限，否则提示用户登录失败。推荐鉴权方案:
 
-  -  服务提供商(SP)允许租户管理员输入一个玉符的唯一识别码
-  -  在第2步Token验证通过后，根据获取的租户名称/ID和识别码,
+   -  服务提供商(SP)允许租户管理员输入一个玉符的唯一识别码
+   -  在第2步Token验证通过后，根据获取的租户名称/ID和识别码,
      查看是否匹配该租户在服务提供商(SP)所提供的唯一识别码，如匹配则表示租户为有效租户。
-  -  接着查看用户是否存在于租户中，如果存在，则赋予登录系统的权限。
+   -  接着查看用户是否存在于租户中，如果存在，则赋予登录系统的权限。
 
 异常说明
 --------
 
 1. 在调用verify()方法时可能抛出以下异常:
 
-  -  InvalidTokenException : 无效token
-  -  InvalidFormatException : token格式不正确
-  -  TokenExpiredException : token过期
-  -  TokenParseException : 解析token出错
-  -  TokenTooEarlyException : token在生效之前使用
-  -  MissingKeyIdException : 缺少KeyID
-  -  CannotRetrieveKeyException : key为空
+   -  InvalidTokenException : 无效token
+   -  InvalidFormatException : token格式不正确
+   -  TokenExpiredException : token过期
+   -  TokenParseException : 解析token出错
+   -  TokenTooEarlyException : token在生效之前使用
+   -  MissingKeyIdException : 缺少KeyID
+   -  CannotRetrieveKeyException : key为空
 
 #. 创建RSATokenGenerator对象时可能抛出YufuInitException异常，存在以下几种情况：
 
-  -  找不到private key文件路径
-  -  private key文件无效
-  -  无法读取private key文件
+   -  找不到private key文件路径
+   -  private key文件无效
+   -  无法读取private key文件
 
 #. 调用generate()方法时，方法体中的sign()方法可能抛出GenerateException异常。
 
