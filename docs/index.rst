@@ -6,6 +6,7 @@
 
    java/readme.rst
    python/readme.rst
+   php/readme.rst
 
 联系玉符
 ==============================================
