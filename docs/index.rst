@@ -7,6 +7,7 @@
    java/readme.rst
    python/readme.rst
    php/readme.rst
+   jenkins/readme.rst
 
 联系玉符
 ==============================================
